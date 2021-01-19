@@ -1,0 +1,33 @@
+.PagesBusca__corpo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.PagesBusca__span {
+    font-size: 24pt;
+    width: 150px;
+    margin: 20px 30px 50px 30px;
+
+}
+
+.PagesBusca__button {
+    background-color: white;
+
+    border: 1px solid #9E9E9E;
+    box-shadow: 1px 5px 3px #9E9E9E;
+    outline: unset;
+
+    padding: 16px 50px;
+    margin: 20px 0 50px 30px;
+
+    color: #9E9E9E;
+    font-size: 16pt;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.PagesBusca__button:active {
+    font-size: 15pt;
+}

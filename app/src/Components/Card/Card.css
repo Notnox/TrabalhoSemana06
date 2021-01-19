@@ -1,0 +1,51 @@
+.componentsCard__article {
+    border: 1px solid #9e9e9e;
+    box-shadow: 0 5px 5px #9E9E9E;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    width: 70%;
+
+    margin: auto;
+    margin-bottom: 20px;
+
+    padding: 10px;
+    padding-right: 0;
+
+    font-family: 'Montserrat';
+    font-size: 14pt;
+}
+
+.componentsCard__image {
+    background-image: url('../utils/Images/img.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    width: 100px;
+    height: 100px;
+
+    margin-right: 20px;
+}
+
+.componentsCard__table {
+    width: 85%;
+
+    text-align: left;
+}
+
+
+
+.componentsCard__table tr th {
+
+    width: 250px;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    direction: ltr;
+
+    margin-right: 25px;
+}
+
