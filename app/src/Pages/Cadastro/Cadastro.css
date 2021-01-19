@@ -1,0 +1,125 @@
+body {
+    background-color: #757575;
+}
+
+.PagesCadastro__div__corpo {
+    display: flex;
+    flex-direction: row;
+
+    background-color: white;
+    width: 780px;
+    padding: 10px;
+
+    margin: 100px auto;
+    box-shadow: 0 5px 5px #505050;
+}
+
+.PagesCadastro__div__corpo section {
+    padding-bottom: 80px;
+}
+
+.PagesCadastro__div__corpo aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.PagesCadastro__div__interessados {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 10px;
+}
+.PagesCadastro__div__interessados span {
+    color: #757575;
+    font-size: 14pt;
+}
+
+.PagesCadastro__h1 {
+    margin: unset;
+    margin-bottom: 30px;
+
+    font-size: 20pt;
+    font-weight: normal;
+    color: #757575;
+}
+
+.PagesCadastro__h2 {
+    margin: unset;
+
+    color: #9E9E9E;
+    font-size: 12pt;
+    font-weight: bold;
+}
+
+.PagesCadastro__div__adicionar {
+    display: flex;
+    flex-direction: row;
+
+    align-items: flex-end;
+}
+
+.PagesCadastro__button__adicionar {
+    font-size: 14pt;
+    font-weight: bold;
+
+    border: unset;
+    outline: unset;
+    border-radius: 5px;
+
+    background-color: #9e9e9e;
+    box-shadow: 0 5px 5px #9E9E9E;
+    
+    color: white;
+
+    width: 150px;
+    padding: 10px 15px;
+
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+
+.PagesCadastro__button__adicionar:active {
+    font-size: 13pt;
+}
+
+.PagesCadastro__button__salvar {
+    font-size: 14pt;
+    font-weight: bold;
+
+    border: unset;
+    outline: unset;
+    border-radius: 5px;
+
+    background-color: #005b95;
+    box-shadow: 0 5px 5px #9E9E9E;
+    
+    color: white;
+
+    width: 150px;
+    padding: 10px 15px;
+
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+
+.PagesCadastro__button__salvar:active {
+    font-size: 13pt;
+}
+
+.PagesCadastro__button__sair {
+    background-color: white;
+
+    border: unset;
+    outline: unset;
+
+    width: 25px;
+
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+.PagesCadastro__button__sair:active {
+    font-size: 13pt;
+}

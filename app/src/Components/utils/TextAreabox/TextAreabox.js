@@ -1,10 +1,11 @@
 import React from 'react';
+import './TextAreabox.css';
 
 const ComponentsUtilsTextAreabox = ({ texto }) => {
     return (
-        <label>
+        <label className='componentsutilsinputbox__label'>
             {texto}
-            <textarea/>
+            <textarea className='componentsutilsinputbox__textarea'/>
         </label>
     );
 }

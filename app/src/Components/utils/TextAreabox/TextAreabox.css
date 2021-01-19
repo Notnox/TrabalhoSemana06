@@ -1,0 +1,16 @@
+.componentsutilsinputbox__textarea {
+    margin: unset;
+    outline: unset;
+    border: unset;
+    resize: none;
+
+    border-bottom: 3px solid #9E9E9E;
+    border-radius: 3px;
+    padding: 3px 0 10px 0;
+
+    width: 600px;
+    height: 100px;
+
+    color: #757575;
+    font-size: 14pt;
+}

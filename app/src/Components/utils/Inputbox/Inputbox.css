@@ -1,0 +1,25 @@
+.componentsutilsinputbox__label {
+    display: flex;
+    flex-direction: column;
+
+    color: #9E9E9E;
+    font-size: 12pt;
+    font-weight: bold;
+
+    margin-bottom: 15px;
+}
+
+.componentsutilsinputbox__input {
+    margin: unset;
+    outline: unset;
+    border: unset;
+
+    border-bottom: 3px solid #9E9E9E;
+    border-radius: 3px;
+    padding: 3px 0 10px 0;
+
+    width: 300px;
+
+    color: #757575;
+    font-size: 14pt;
+}
