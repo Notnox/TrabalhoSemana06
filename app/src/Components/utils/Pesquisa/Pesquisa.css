@@ -21,6 +21,8 @@
 
 .PagesIndex__lupa {
     cursor: pointer;
+
+    text-decoration: unset;
 }
 
 .PagesIndex__lupa:active {

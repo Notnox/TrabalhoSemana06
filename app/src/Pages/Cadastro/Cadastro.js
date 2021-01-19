@@ -1,9 +1,18 @@
 import React from 'react';
+import { useHistory, useParams } from 'react-router-dom';
 import ComponentsUtilsInputbox from '../../Components/utils/Inputbox/Inputbox';
 import ComponentsUtilsTextAreabox from '../../Components/utils/TextAreabox/TextAreabox';
 import './Cadastro.css'
 
-const PagesCadastro = () => {
+const PagesCadastro = () => {   
+
+    const { id } = useParams();
+    const history = useHistory();
+
+    const Fechar = () => {
+        history.push('/')
+    };
+
     return (
         <div className='PagesCadastro__div__body'>
             <div className='PagesCadastro__div__corpo'>
@@ -33,7 +42,7 @@ const PagesCadastro = () => {
                     />
                 </section>
                 <aside>
-                    <button className='PagesCadastro__button__sair'>x</button>
+                    <button className='PagesCadastro__button__sair' onClick={Fechar}>x</button>
                     <button className='PagesCadastro__button__salvar'>SALVAR</button>
                 </aside>
             </div>
