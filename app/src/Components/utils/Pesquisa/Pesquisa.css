@@ -1,0 +1,29 @@
+.PagesIndex__pesquisa {
+    border: 1px solid #9E9E9E;
+    box-shadow: 1px 5px 3px #9E9E9E;
+
+    padding: 15px 15px;
+    margin: 20px 0 50px 0;
+}
+
+.PagesIndex__Input {
+    color: #9E9E9E;
+    font-size: 16pt;
+    font-weight: bold;
+
+    margin-right: 50px;
+
+    border: unset;
+    outline: unset;
+
+    width: 470px;
+}
+
+.PagesIndex__lupa {
+    cursor: pointer;
+}
+
+.PagesIndex__lupa:active {
+    font-size: 10pt;
+    padding: 2px;
+}
