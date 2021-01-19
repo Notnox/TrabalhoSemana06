@@ -1,0 +1,63 @@
+
+.PagesIndex__Corpo {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.PagesIndex__h1 {
+    color: #005b95;
+    font-size: 24pt;
+    font-weight: normal;
+}
+
+.PagesIndex__pesquisa {
+    border: 1px solid #9E9E9E;
+    box-shadow: 1px 5px 3px #9E9E9E;
+
+    padding: 15px 15px;
+    margin: 20px 0 50px 0;
+}
+
+.PagesIndex__Input {
+    color: #9E9E9E;
+    font-size: 16pt;
+    font-weight: bold;
+
+    margin-right: 50px;
+
+    border: unset;
+    outline: unset;
+
+    width: 470px;
+}
+
+.PagesIndex__h2 {
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+.PagesIndex__link {
+    color: #005b95;
+    font-size: 14pt;
+    text-decoration: underline;
+
+    cursor: pointer;
+}
+
+.PagesIndex__link:active {
+    font-size: 13pt;
+}
+
+.PagesIndex__lupa {
+    cursor: pointer;
+}
+
+.PagesIndex__lupa:active {
+    font-size: 10pt;
+    padding: 2px;
+}
