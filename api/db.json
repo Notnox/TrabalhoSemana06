@@ -1,0 +1,38 @@
+{
+    "processos": [
+        {
+            "id": 1,
+            "numero": "OO1T5",
+            "assunto": "Projeto SoftPlan",
+            "descricao": "Um projeto de REACT JS"
+        },
+        {
+            "id": 2,
+            "numero": "OO1T5",
+            "assunto": "Projeto SoftPlan",
+            "descricao": "Um projeto de REACT JS"
+        }
+    ],
+    "interessados": [
+        {
+            "id": 1,
+            "nome": "Lucas Pires",
+            "processoId": 1
+        },
+        {
+            "id": 2,
+            "nome": "Leonardo",
+            "processoId": 1
+        },
+        {
+            "id": 3,
+            "nome": "Lucas Pires",
+            "processoId": 2
+        },
+        {
+            "id": 4,
+            "nome": "Leonardo",
+            "processoId": 2
+        }
+    ]
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import ComponentsUtilsPesquisa from '../../Components/utils/Pesquisa/Pesquisa';
-import './Index.css'
+import './Index.css';
+
 
 const PagesIndex = () => {
     return (
