@@ -4,7 +4,7 @@ import './Card.css'
 const ComponentsCard = ({ processo }) => {
     return (
         <article className='componentsCard__article'>
-            <img className='componentsCard__image' />
+            <img className='componentsCard__image' alt='projeto'/>
             <table className='componentsCard__table'>
                 <tr>
                     <th>Número</th>

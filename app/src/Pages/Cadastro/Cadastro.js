@@ -1,17 +1,86 @@
-import React from 'react';
-import { useHistory, useParams } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import axios from 'axios'
 import ComponentsUtilsInputbox from '../../Components/utils/Inputbox/Inputbox';
 import ComponentsUtilsTextAreabox from '../../Components/utils/TextAreabox/TextAreabox';
-import './Cadastro.css'
+import './Cadastro.css';
 
-const PagesCadastro = () => {   
+const num = Math.floor(Math.random() * (9999 - 1000) + 1000);
+const ano = new Date().getFullYear();
 
-    const { id } = useParams();
+const initialProcesso = {
+    numero: `SOFT ${num}/${ano}`,
+    assunto: '',
+    descricao: '',
+};
+
+const initialInteressados = {
+    nome: '',
+    processoId: 0
+};
+
+const PagesCadastro = () => {
+
+    /* const { id } = useParams(); */
     const history = useHistory();
+    const [processo, setProcesso] = useState(initialProcesso);
+    const [interessados, setInteressados] = useState([]);
+    const [processosAPI, setProcessosAPI] = useState([])
+    const [interessado, setInteressado] = useState(initialInteressados);
+    
+    useEffect(() => {
+        axios.get('http://localhost:5000/processos?_embed=interessados')
+            .then((response) => {
+                setProcessosAPI(response.data)
+            });
+    }, [])   
+
+    useEffect(() => {
+        setInteressado({ ...interessado, processoId: processosAPI.length + 1 });
+        initialInteressados.processoId = processosAPI.length + 1 
+    }, [processosAPI])   
+
+    console.log(initialInteressados);
+    console.log(interessado);
 
     const Fechar = () => {
-        history.push('/')
-    };
+        history.push('/');
+    }
+
+    const onChangeProcesso = (ev) => {
+        const { name, value } = ev.target;
+
+        setProcesso({ ...processo, [name]: value });
+    }
+
+    const onChangeInteressado = (ev) => {
+        const { name, value } = ev.target;
+
+        setInteressado({ ...interessado, [name]: value });
+        
+    }
+
+    const adicionarInteressado = () => {
+        if (interessado.nome.length === 0) { return alert('Informe um interessado') };
+
+        setInteressados([...interessados, interessado]);
+        setInteressado(initialInteressados);
+    }
+
+    const onSubmit = (ev) => {
+        ev.preventDefault();    
+        if (processo.assunto.length === 0) { return alert('Informe um assunto') };
+        if (processo.descricao.length === 0) { return alert('Informe uma descrição') };
+
+        interessados.map((item) => {
+            axios.post('http://localhost:5000/interessados', item)
+        });
+
+        axios.post('http://localhost:5000/processos', processo)
+            .then(() => {
+                history.push('/');
+            });
+    }
 
     return (
         <div className='PagesCadastro__div__body'>
@@ -21,29 +90,39 @@ const PagesCadastro = () => {
                     <ComponentsUtilsInputbox
                         texto='Assunto'
                         tipo='text'
+                        name='assunto'
                         desc='Informe o assunto do processo'
+                        value={processo.assunto}
+                        onChange={onChangeProcesso}
                     />
                     <div className='PagesCadastro__div__interessados'>
                         <h2 className='PagesCadastro__h2'>Interessados</h2>
-                        <span>Roberto Carlos</span>
-                        <span>Roberto Carlos</span>
-                        <span>Roberto Carlos</span>
+                        {interessados.map((item) => {
+                            return <span key={item.nome}>{item.nome}</span>
+                        })}
                     </div>
                     <div className='PagesCadastro__div__adicionar'>
                         <ComponentsUtilsInputbox
                             texto='Novo interessado'
                             tipo='text'
+                            name='nome'
                             desc='Informe o nome do interessado'
+                            value={interessado.nome}
+                            onChange={onChangeInteressado}
                         />
-                        <button className='PagesCadastro__button__adicionar'>ADICIONAR</button>
+                        <button className='PagesCadastro__button__adicionar' onSubmit={null} onClick={adicionarInteressado}>ADICIONAR</button>
                     </div>
                     <ComponentsUtilsTextAreabox
                         texto='Descrição'
+                        name='descricao'
+                        onChange={onChangeProcesso}
                     />
                 </section>
                 <aside>
                     <button className='PagesCadastro__button__sair' onClick={Fechar}>x</button>
-                    <button className='PagesCadastro__button__salvar'>SALVAR</button>
+                    <form onSubmit={onSubmit}>
+                        <button className='PagesCadastro__button__salvar' onSubmit={onSubmit}>SALVAR</button>
+                    </form>
                 </aside>
             </div>
         </div>
