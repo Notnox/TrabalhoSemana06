@@ -1,45 +1,4 @@
 {
-  "processos": [
-    {
-      "numero": "SOFT 9332/2021",
-      "assunto": "Texto Lorem test",
-      "descricao": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur expedita deleniti dolorum quisquam corrupti sit officia inventore dicta ex laudantium doloremque perspiciatis dolor, unde laborum vitae nihil molestias modi velit.",
-      "data": "22/0/2021/",
-      "id": 1
-    },
-    {
-      "numero": "SOFT 5874/2021",
-      "assunto": "Testim",
-      "descricao": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur expedita deleniti dolorum quisquam corrupti sit officia inventore dicta ex laudantium doloremque perspiciatis dolor, unde laborum vitae nihil molestias modi velit.",
-      "data": "22/1/2021",
-      "id": 2
-    }
-  ],
-  "interessados": [
-    {
-      "nome": "Lucas Ricardo",
-      "processoId": 1,
-      "id": 1
-    },
-    {
-      "nome": "Roberto Justos",
-      "processoId": 1,
-      "id": 2
-    },
-    {
-      "nome": "Zezé Silva",
-      "processoId": 1,
-      "id": 3
-    },
-    {
-      "nome": "Lucas Ricardo Pires",
-      "processoId": 2,
-      "id": 4
-    },
-    {
-      "nome": "Luciano",
-      "processoId": 1,
-      "id": 5
-    }
-  ]
+  "processos": [],
+  "interessados": []
 }

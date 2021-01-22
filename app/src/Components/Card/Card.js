@@ -1,16 +1,35 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
+import axios from 'axios'
 import './Card.css'
 
 const ComponentsCard = ({ processo }) => {
 
     const [exibirCard, setExibirCard] = useState(false)
+    const [deleteCard, setDeleteCard] = useState(false)
+    const history = useHistory()
 
-   
+    const onClickDelete = () => {
+        const response = window.confirm(`Deseja excluir o processo ${processo.numero}?`)
+
+        if (response) {
+            axios.delete(`http://localhost:5000/processos/${processo.id}?_embed=interessados`)
+                .then(() => {
+                    setDeleteCard(true)
+                })
+        }
+    }
 
     const onClick = () => {
         if (exibirCard) { setExibirCard(false) } else { setExibirCard(true) }
     }
+
+    useEffect(() => {
+        if (deleteCard) {
+            window.location.reload();
+            alert('Processo foi removido.')
+        }
+    }, [deleteCard])
 
     return (
         <div className='conjuntoCards'>
@@ -85,7 +104,7 @@ const ComponentsCard = ({ processo }) => {
                         <Link to={`/edit/${processo.id}`}>
                             <button className='Card__Detalhado__button__Editar'>EDITAR</button>
                         </Link>
-                            <button className='Card__Detalhado__button__Remover'>REMOVER</button>
+                        <button className='Card__Detalhado__button__Remover' onClick={onClickDelete}>REMOVER</button>
                     </footer>
                 </div>
             }
