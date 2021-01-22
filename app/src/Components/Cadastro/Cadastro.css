@@ -43,7 +43,7 @@
     font-size: 14pt;
 }
 
-.PagesCadastro__h1 {
+.PagesCadastro__h1, .PagesCadastro__div__carregando {
     margin: unset;
     margin-bottom: 30px;
 

@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Card.css'
 
 const ComponentsCard = ({ processo }) => {
 
     const [exibirCard, setExibirCard] = useState(false)
+
+   
 
     const onClick = () => {
         if (exibirCard) { setExibirCard(false) } else { setExibirCard(true) }
@@ -13,7 +16,7 @@ const ComponentsCard = ({ processo }) => {
         <div className='conjuntoCards'>
             <article className='Card__article' onClick={onClick}>
                 <header>
-                    {!exibirCard && <img className='Card__image' alt=''/>}
+                    {!exibirCard && <img className='Card__image' alt='' />}
                 </header>
                 <section className='Card__section'>
                     <label className='Card__label'>
@@ -42,7 +45,7 @@ const ComponentsCard = ({ processo }) => {
             {exibirCard &&
                 <div className='Card__Detalhado__Corpo'>
                     <header className='Card__Detalhado__header'>
-                        <img className='Card__image' alt=''/>
+                        <img className='Card__image' alt='' />
                         <div className='Card__Detalhado__header__geral'>
                             <div className='Card__Detalhado__header__superior'>
                                 <label>
@@ -79,8 +82,10 @@ const ComponentsCard = ({ processo }) => {
                         </div>
                     </section>
                     <footer className='Card__Detalhado__footer'>
-                        <button className='Card__Detalhado__button__Editar'>EDITAR</button>
-                        <button className='Card__Detalhado__button__Remover'>REMOVER</button>
+                        <Link to={`/edit/${processo.id}`}>
+                            <button className='Card__Detalhado__button__Editar'>EDITAR</button>
+                        </Link>
+                            <button className='Card__Detalhado__button__Remover'>REMOVER</button>
                     </footer>
                 </div>
             }

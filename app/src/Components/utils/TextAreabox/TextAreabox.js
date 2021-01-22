@@ -1,7 +1,7 @@
 import React from 'react';
 import './TextAreabox.css';
 
-const ComponentsUtilsTextAreabox = ({ texto, onChange, name }) => {
+const ComponentsUtilsTextAreabox = ({ texto, onChange, name, value }) => {
     return (
         <label className='componentsutilsinputbox__label'>
             {texto}
@@ -9,6 +9,7 @@ const ComponentsUtilsTextAreabox = ({ texto, onChange, name }) => {
                 className='componentsutilsinputbox__textarea'
                 name={name}
                 onChange={onChange}
+                value={value}
             />
         </label>
     );
