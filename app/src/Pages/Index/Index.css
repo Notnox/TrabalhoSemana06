@@ -1,3 +1,8 @@
+* {
+    font-family: 'Montserrat';
+    font-family: sans-serif;
+}
+
 .PagesIndex__Corpo {
     width: 100vw;
     height: 100vh;
@@ -8,20 +13,60 @@
     align-items: center;
 }
 
+/*Busca de processos*/
+
 .PagesIndex__h1 {
     color: #005b95;
     font-size: 24pt;
     font-weight: normal;
 }
 
+/*Campo de pesquisa*/
+
+.PagesIndex__pesquisa {
+    border: 1px solid #9E9E9E;
+    box-shadow: 1px 5px 3px #9E9E9E;
+
+    padding: 15px 15px;
+    margin: 20px 0 50px 0;
+}
+
+.PagesIndex__Input {
+    color: #9E9E9E;
+    font-size: 16pt;
+    font-weight: normal;
+
+    margin-right: 50px;
+
+    border: unset;
+    outline: unset;
+
+    width: 470px;
+}
+
+.PagesIndex__lupa {
+    cursor: pointer;
+
+    text-decoration: unset;
+}
+
+.PagesIndex__lupa:active {
+    font-size: 10pt;
+    padding: 2px;
+}
+
+/*Campo de pesquisa*/
+
+
 .PagesIndex__h2 {
     font-size: 14pt;
-    font-weight: bold;
+    font-weight: normal;
 }
 
 .PagesIndex__link {
     color: #005b95;
     font-size: 14pt;
+    font-weight: bold;
     text-decoration: underline;
 
     cursor: pointer;
@@ -29,4 +74,50 @@
 
 .PagesIndex__link:active {
     font-size: 13pt;
+}
+
+/*Parte do estilo quando o usuario solicitou uma pesquisa*/
+
+.PagesIndex__Busca__corpo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.PagesIndex__Busca__span {
+    color:  #757575;
+    font-size: 24pt;
+    font-weight: normal;
+
+    width: 150px;
+
+    margin: 20px 30px 50px 30px;
+
+    cursor: pointer;
+}
+
+.PagesIndex__Busca__button {
+    background-color: white;
+
+    border: 1px solid #9E9E9E;
+    box-shadow: 1px 5px 3px #9E9E9E;
+    outline: unset;
+
+    padding: 16px 50px;
+    margin: 20px 0 50px 30px;
+
+    color: #757575;
+    font-size: 16pt;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.PagesIndex__Busca__button:active {
+    font-size: 15pt;
+}
+
+.PagesIndex__Busca__section{
+    display: flex;
+    flex-direction: column;
 }
