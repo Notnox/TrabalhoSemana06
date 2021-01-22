@@ -13,7 +13,7 @@ const ComponentsCard = ({ processo }) => {
         <div className='conjuntoCards'>
             <article className='Card__article' onClick={onClick}>
                 <header>
-                    {!exibirCard && <img className='Card__image' />}
+                    {!exibirCard && <img className='Card__image' alt=''/>}
                 </header>
                 <section className='Card__section'>
                     <label className='Card__label'>
@@ -42,7 +42,7 @@ const ComponentsCard = ({ processo }) => {
             {exibirCard &&
                 <div className='Card__Detalhado__Corpo'>
                     <header className='Card__Detalhado__header'>
-                        <img className='Card__image' />
+                        <img className='Card__image' alt=''/>
                         <div className='Card__Detalhado__header__geral'>
                             <div className='Card__Detalhado__header__superior'>
                                 <label>

@@ -6,12 +6,16 @@ import ComponentsUtilsTextAreabox from '../../Components/utils/TextAreabox/TextA
 import './Cadastro.css';
 
 const num = Math.floor(Math.random() * (9999 - 1000) + 1000);
+const dia = new Date().getDate();
+const mes = new Date().getMonth();
 const ano = new Date().getFullYear();
+const dataAtual = `${dia}/${mes + 1}/${ano}`
 
 const initialProcesso = {
     numero: `SOFT ${num}/${ano}`,
     assunto: '',
     descricao: '',
+    data: dataAtual
 };
 
 const initialInteressados = {
@@ -38,10 +42,8 @@ const PagesCadastro = () => {
     useEffect(() => {
         setInteressado({ ...interessado, processoId: processosAPI.length + 1 });
         initialInteressados.processoId = processosAPI.length + 1 
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [processosAPI])   
-
-    console.log(initialInteressados);
-    console.log(interessado);
 
     const Fechar = () => {
         history.push('/');
@@ -73,7 +75,7 @@ const PagesCadastro = () => {
         if (processo.descricao.length === 0) { return alert('Informe uma descrição') };
 
         interessados.map((item) => {
-            axios.post('http://localhost:5000/interessados', item)
+            return axios.post('http://localhost:5000/interessados', item)
         });
 
         axios.post('http://localhost:5000/processos', processo)

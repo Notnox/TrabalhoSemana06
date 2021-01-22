@@ -37,7 +37,6 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    align-items: end;
     
     width: 100%;
 }
@@ -161,6 +160,7 @@
 }
 
 .Card__Detalhado__footer {
+    margin-top: 20px;
     width: 100%;
 }
 

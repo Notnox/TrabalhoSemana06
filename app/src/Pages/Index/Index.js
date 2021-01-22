@@ -6,6 +6,7 @@ import ComponentsCard from '../../Components/Card/Card';
 const PagesIndex = () => {
 
     const [exibirIndex, setExibirIndex] = useState(true)
+    const [pesquisa, setPesquisa] = useState('')
     const [processos, setProcessos] = useState([])
 
     useEffect(() => {
@@ -14,6 +15,17 @@ const PagesIndex = () => {
                 setProcessos(response.data)
             });
     }, [])
+
+    const onChange = (ev) => {
+        setPesquisa(ev.target.value)
+
+        console.log(pesquisa);
+    }
+
+    const onClick = () => {
+        if (!pesquisa) { return alert('É necessário informar algum valor para pesquisa.') }
+        setExibirIndex(false)
+    }
 
     return (
         <Fragment>
@@ -24,10 +36,13 @@ const PagesIndex = () => {
                         <input
                             placeholder='Pesquise por uma informação do processo'
                             className='PagesIndex__Input'
+                            onChange={onChange}
+                            value={pesquisa}
                         />
                         <a
                             className='PagesIndex__lupa'
-                            onClick={() => { setExibirIndex(false) }}
+                            onClick={onClick}
+                            href="#/"
                         >🔎</a>
                     </div>
                     <h2 className='PagesIndex__h2'>
@@ -51,12 +66,18 @@ const PagesIndex = () => {
                             <input
                                 placeholder='Pesquise por uma informação do processo'
                                 className='PagesIndex__Input'
+                                onChange={onChange}
+                                value={pesquisa}
                             />
                             <a
                                 className='PagesIndex__lupa'
+                                onClick={onClick}
+                                href="#/"
                             >🔎</a>
                         </div>
-                        <button className='PagesIndex__Busca__button'>NOVO</button>
+                        <a href='/cadastro'>
+                            <button className='PagesIndex__Busca__button'>NOVO</button>
+                        </a>
                     </header>
                     <section className='PagesIndex__Busca__section'>
                         {processos.map((processo) => (
