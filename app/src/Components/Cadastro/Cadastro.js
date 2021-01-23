@@ -82,7 +82,6 @@ const Cadastro = ({ id }) => {
         setInteressados([...interessados, interessado]);
         setInteressado(initialInteressados);
     }
-    console.log(interessados);
 
     const onSubmit = (ev) => {
         ev.preventDefault();

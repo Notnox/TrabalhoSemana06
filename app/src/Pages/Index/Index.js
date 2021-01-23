@@ -10,16 +10,27 @@ const PagesIndex = () => {
     const [processos, setProcessos] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:5000/processos?_embed=interessados')
+
+        const params = {};
+
+        if (pesquisa) {
+            params.assunto_like = pesquisa
+        }
+
+        axios.get('http://localhost:5000/processos?_embed=interessados', { params })
             .then((response) => {
                 setProcessos(response.data)
             });
-    }, [])
+
+            if (!pesquisa) {
+                setExibirIndex(true)
+            } else {
+                setExibirIndex(false)
+            };
+    }, [pesquisa])
 
     const onChange = (ev) => {
         setPesquisa(ev.target.value)
-
-        console.log(pesquisa);
     }
 
     const onClick = () => {
@@ -36,6 +47,7 @@ const PagesIndex = () => {
                         <input
                             placeholder='Pesquise por uma informação do processo'
                             className='PagesIndex__Input'
+                            autoFocus 
                             onChange={onChange}
                             value={pesquisa}
                         />
@@ -66,6 +78,7 @@ const PagesIndex = () => {
                             <input
                                 placeholder='Pesquise por uma informação do processo'
                                 className='PagesIndex__Input'
+                                autoFocus
                                 onChange={onChange}
                                 value={pesquisa}
                             />
