@@ -120,46 +120,46 @@ const Cadastro = ({ id }) => {
                 : (
                     <div className='PagesCadastro__div__body'>
                         <div className='PagesCadastro__div__corpo'>
-                            <section>
-                                <h1 className='PagesCadastro__h1'>Cadastro de processo</h1>
-                                <ComponentsUtilsInputbox
-                                    texto='Assunto'
-                                    tipo='text'
-                                    name='assunto'
-                                    desc='Informe o assunto do processo'
-                                    value={processo.assunto}
-                                    onChange={onChangeProcesso}
-                                />
-                                <div className='PagesCadastro__div__interessados'>
-                                    <h2 className='PagesCadastro__h2'>Interessados</h2>
-                                    {interessados.map((item) => {
-                                        return <span>{item.nome}</span>
-                                    })}
-                                </div>
-                                <div className='PagesCadastro__div__adicionar'>
+                            <form onSubmit={onSubmit}>
+                                <section>
+                                    <h1 className='PagesCadastro__h1'>Cadastro de processo</h1>
                                     <ComponentsUtilsInputbox
-                                        texto='Novo interessado'
+                                        texto='Assunto'
                                         tipo='text'
-                                        name='nome'
-                                        desc='Informe o nome do interessado'
-                                        value={interessado.nome}
-                                        onChange={onChangeInteressado}
+                                        name='assunto'
+                                        desc='Informe o assunto do processo'
+                                        value={processo.assunto}
+                                        onChange={onChangeProcesso}
                                     />
-                                    <button className='PagesCadastro__button__adicionar' onSubmit={null} onClick={adicionarInteressado}>ADICIONAR</button>
-                                </div>
-                                <ComponentsUtilsTextAreabox
-                                    texto='Descrição'
-                                    name='descricao'
-                                    value={processo.descricao}
-                                    onChange={onChangeProcesso}
-                                />
-                            </section>
-                            <aside>
-                                <button className='PagesCadastro__button__sair' onClick={Fechar}>x</button>
-                                <form onSubmit={onSubmit}>
+                                    <div className='PagesCadastro__div__interessados'>
+                                        <h2 className='PagesCadastro__h2'>Interessados</h2>
+                                        {interessados.map((item) => {
+                                            return <span>{item.nome}</span>
+                                        })}
+                                    </div>
+                                    <div className='PagesCadastro__div__adicionar'>
+                                        <ComponentsUtilsInputbox
+                                            texto='Novo interessado'
+                                            tipo='text'
+                                            name='nome'
+                                            desc='Informe o nome do interessado'
+                                            value={interessado.nome}
+                                            onChange={onChangeInteressado}
+                                        />
+                                        <button className='PagesCadastro__button__adicionar' type='button' onClick={adicionarInteressado}>ADICIONAR</button>
+                                    </div>
+                                    <ComponentsUtilsTextAreabox
+                                        texto='Descrição'
+                                        name='descricao'
+                                        value={processo.descricao}
+                                        onChange={onChangeProcesso}
+                                    />
+                                    <button className='PagesCadastro__button__sair' onClick={Fechar}>x</button>
+                                </section>
+                                <aside>
                                     <button className='PagesCadastro__button__salvar' onSubmit={onSubmit}>SALVAR</button>
-                                </form>
-                            </aside>
+                                </aside>
+                            </form>
                         </div>
                     </div>
                 )}

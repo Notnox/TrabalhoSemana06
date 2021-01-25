@@ -54,11 +54,11 @@ const PagesIndex = () => {
                             onChange={onChange}
                             value={pesquisa}
                         />
-                        <a
+                        <button
                             className='PagesIndex__lupa'
                             onClick={onClick}
                             href="#/"
-                        >🔎</a>
+                        >🔎</button>
                     </div>
                     <h2 className='PagesIndex__h2'>
                         Você pode criar um novo processo <a href='/cadastro'
@@ -85,11 +85,11 @@ const PagesIndex = () => {
                                 onChange={onChange}
                                 value={pesquisa}
                             />
-                            <a
+                            <button
                                 className='PagesIndex__lupa'
                                 onClick={onClick}
                                 href="#/"
-                            >🔎</a>
+                            >🔎</button>
                         </div>
                         <a href='/cadastro'>
                             <button className='PagesIndex__Busca__button'>NOVO</button>

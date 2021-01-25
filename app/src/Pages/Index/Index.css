@@ -4,7 +4,7 @@
 }
 
 .PagesIndex__Corpo {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
 
     display: flex;
@@ -27,8 +27,14 @@
     border: 1px solid #9E9E9E;
     box-shadow: 1px 5px 3px #9E9E9E;
 
-    padding: 15px 15px;
+    padding: 15px 5px;
     margin: 20px 0 50px 0;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    width: 100%;
 }
 
 .PagesIndex__Input {
@@ -36,18 +42,27 @@
     font-size: 16pt;
     font-weight: normal;
 
-    margin-right: 50px;
+    display: flex;
+    width: 100%;
 
     border: unset;
     outline: unset;
 
-    width: 470px;
 }
 
 .PagesIndex__lupa {
     cursor: pointer;
 
     text-decoration: unset;
+    background-color: unset;
+    border: unset;
+    outline: unset;
+
+    text-align: left;
+    display: flex;
+    justify-content: flex-end;
+
+    width: 10%;
 }
 
 .PagesIndex__lupa:active {
@@ -61,6 +76,8 @@
 .PagesIndex__h2 {
     font-size: 14pt;
     font-weight: normal;
+
+    text-align: center;
 }
 
 .PagesIndex__link {
@@ -80,7 +97,7 @@
 
 .PagesIndex__Busca__corpo {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
 }
 
@@ -89,9 +106,11 @@
     font-size: 24pt;
     font-weight: normal;
 
-    width: 150px;
+    width: 100%;
 
-    margin: 20px 30px 50px 30px;
+    text-align: center;
+
+    margin: 20px 30px 20px 30px;
 
     cursor: pointer;
 }
@@ -104,7 +123,8 @@
     outline: unset;
 
     padding: 16px 50px;
-    margin: 20px 0 50px 30px;
+    
+    margin-bottom: 20px;
 
     color: #757575;
     font-size: 16pt;
@@ -120,4 +140,42 @@
 .PagesIndex__Busca__section{
     display: flex;
     flex-direction: column;
+}
+
+@media screen and (min-width: 768px) {
+    .PagesIndex__pesquisa {
+        width: 500px;
+    }
+
+    .PagesIndex__Busca__corpo {
+        flex-direction: row;
+        
+        justify-content: start;
+
+        margin: unset;
+        padding: unset;
+
+    }
+
+    .PagesIndex__Busca__section {
+        align-items: center;
+        width: 100%;
+    }
+
+    .PagesIndex__pesquisa {
+        align-items: center;
+        justify-content: center;
+
+        margin: 5px;
+    }
+
+    .PagesIndex__Busca__button {
+        margin: 5px;
+    }
+
+    .PagesIndex__Busca__span {
+        width: 150px;
+    }
+
+   
 }

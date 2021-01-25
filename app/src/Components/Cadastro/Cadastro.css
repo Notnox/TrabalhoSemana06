@@ -11,11 +11,13 @@
 }
 
 .PagesCadastro__div__corpo {
+    position: relative;
+
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 
     background-color: white;
-    width: 780px;
+    width: 100%;
     padding: 10px;
 
     box-shadow: 0 5px 5px #505050;
@@ -62,9 +64,7 @@
 
 .PagesCadastro__div__adicionar {
     display: flex;
-    flex-direction: row;
-
-    align-items: flex-end;
+    flex-direction: column;
 }
 
 .PagesCadastro__button__adicionar {
@@ -116,6 +116,12 @@
 }
 
 .PagesCadastro__button__sair {
+
+    position: absolute;
+
+    top: 8px;
+    right: 8px;
+
     background-color: white;
 
     border: unset;
@@ -129,4 +135,19 @@
 
 .PagesCadastro__button__sair:active {
     font-size: 13pt;
+}
+
+@media screen and (min-width: 768px) {
+    .PagesCadastro__div__corpo {
+        width: 800px;
+    }
+
+    .PagesCadastro__div__adicionar {
+        flex-direction: row;
+        align-items: flex-end;
+    }
+
+    .PagesCadastro__button__adicionar {
+        height: 40px;
+    }
 }
