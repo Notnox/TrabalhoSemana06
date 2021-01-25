@@ -24,7 +24,7 @@ __________________________________________________
 
 ### :computer: __Como funciona__ :computer:
 
-Acesse os terminais abaixo e execute os comandos:
+Acesse o terminal e execute os comandos abaixo:
 
 ~~~html
 (Seu diretório)\api> npm start
