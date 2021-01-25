@@ -6,27 +6,30 @@ import ComponentsCard from '../../Components/Card/Card';
 const PagesIndex = () => {
 
     const [exibirIndex, setExibirIndex] = useState(true)
+    const [carregando, setCarregando] = useState(true)
+    const [nula, setNulo] = useState(false)
     const [pesquisa, setPesquisa] = useState('')
     const [processos, setProcessos] = useState([])
 
     useEffect(() => {
 
         const params = {};
+        setCarregando(true)
 
         if (pesquisa) {
             params.assunto_like = pesquisa
         }
 
-        axios.get('http://localhost:5000/processos?_embed=interessados', { params })
+        if (!pesquisa) {
+            setExibirIndex(true)
+        } else {
+            setExibirIndex(false)
+            axios.get('http://localhost:5000/processos?_embed=interessados', { params })
             .then((response) => {
                 setProcessos(response.data)
+                setCarregando(false)
             });
-
-            if (!pesquisa) {
-                setExibirIndex(true)
-            } else {
-                setExibirIndex(false)
-            };
+        };
     }, [pesquisa])
 
     const onChange = (ev) => {
@@ -45,9 +48,9 @@ const PagesIndex = () => {
                     <h1 className='PagesIndex__h1'>Busca de processos</h1>
                     <div className='PagesIndex__pesquisa'>
                         <input
-                            placeholder='Pesquise por uma informação do processo'
+                            placeholder='Pesquise por um assunto do processo'
                             className='PagesIndex__Input'
-                            autoFocus 
+                            autoFocus
                             onChange={onChange}
                             value={pesquisa}
                         />
@@ -76,7 +79,7 @@ const PagesIndex = () => {
                             Busca de processos</span>
                         <div className='PagesIndex__pesquisa'>
                             <input
-                                placeholder='Pesquise por uma informação do processo'
+                                placeholder='Pesquise por um assunto do processo'
                                 className='PagesIndex__Input'
                                 autoFocus
                                 onChange={onChange}
@@ -92,11 +95,14 @@ const PagesIndex = () => {
                             <button className='PagesIndex__Busca__button'>NOVO</button>
                         </a>
                     </header>
-                    <section className='PagesIndex__Busca__section'>
-                        {processos.map((processo) => (
-                            <ComponentsCard processo={processo} />
-                        ))}
-                    </section>
+                    {carregando && <div>Carregando...</div>}
+                    {pesquisa.length > 0 &&
+                        <section className='PagesIndex__Busca__section'>
+                            {processos.map((processo) => (
+                                <ComponentsCard processo={processo} />
+                            ))}
+                        </section>
+                    }
                 </div>
             }
         </Fragment>
